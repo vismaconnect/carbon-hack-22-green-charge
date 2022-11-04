@@ -89,7 +89,7 @@ Resources:
     Properties:
         FunctionName: !Ref RegisterDeviceFunction<<STAGE>>
         Principal: '*'
-        Action: lambda:InvokeFunctionURL
+        Action: lambda:InvokeFunctionUrl
         FunctionUrlAuthType: NONE
 
 

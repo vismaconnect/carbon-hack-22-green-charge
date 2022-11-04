@@ -80,7 +80,7 @@ Resources:
     Properties:
         FunctionName: !Ref ChargeStartFunction<<STAGE>>
         Principal: '*'
-        Action: lambda:InvokeFunctionURL
+        Action: lambda:InvokeFunctionUrl
         FunctionUrlAuthType: NONE
 
 

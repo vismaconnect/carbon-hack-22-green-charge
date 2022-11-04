@@ -81,7 +81,7 @@ Resources:
     Properties:
         FunctionName: !Ref CalibrateStartFunction<<STAGE>>
         Principal: '*'
-        Action: lambda:InvokeFunctionURL
+        Action: lambda:InvokeFunctionUrl
         FunctionUrlAuthType: NONE
 
 Outputs:
