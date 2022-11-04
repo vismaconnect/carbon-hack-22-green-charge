@@ -1,0 +1,908 @@
+[
+    {
+        "ba": "AECI",
+        "name": "Associated Electric Coop Inc",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "AESO",
+        "name": "Alberta Electric System Operator",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "AT",
+        "name": "Austria",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "AVA",
+        "name": "Avista Corp",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "AZPS",
+        "name": "Arizona Public Service Co",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "BANC",
+        "name": "Balancing Authority of Northern California",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "BCHYDRO",
+        "name": "BC Hydro",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "BE",
+        "name": "Belgium",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "BPA",
+        "name": "Bonneville Power Administration",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "CAISO_ESCONDIDO",
+        "name": "California ISO Escondido",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "CAISO_LONGBEACH",
+        "name": "California ISO Long Beach",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "CAISO_NORTH",
+        "name": "California ISO Northern",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "CAISO_PALMSPRINGS",
+        "name": "California ISO Palm Springs",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "CAISO_REDDING",
+        "name": "California ISO Redding",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "CAISO_SANBERNARDINO",
+        "name": "California ISO San Bernardino",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "CAISO_SANDIEGO",
+        "name": "California ISO San Diego",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "CHPD",
+        "name": "PUD No 1 of Chelan County",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "CPLE",
+        "name": "Duke Energy Progress East",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "CPLW",
+        "name": "Duke Energy Progress West",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "CZ",
+        "name": "Czechia",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "DE",
+        "name": "Germany",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "DK",
+        "name": "Denmark",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "DOPD",
+        "name": "PUD No 1 of Douglas County",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "DUK",
+        "name": "Duke Energy Carolinas",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "EE",
+        "name": "Estonia",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ELE",
+        "name": "El Paso Electric",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ERCOT_AUSTIN",
+        "name": "ERCOT Austin",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ERCOT_COAST",
+        "name": "ERCOT Coast",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ERCOT_EASTTX",
+        "name": "ERCOT East Texas",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ERCOT_HIDALGO",
+        "name": "ERCOT Hidalgo County",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ERCOT_NORTHCENTRAL",
+        "name": "ERCOT North Central",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ERCOT_PANHANDLE",
+        "name": "ERCOT Northern Panhandle",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ERCOT_SANANTONIO",
+        "name": "ERCOT San Antonio",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ERCOT_SECOAST",
+        "name": "ERCOT South Eastern Coast",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ERCOT_SOUTHTX",
+        "name": "ERCOT South Texas",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ERCOT_WESTTX",
+        "name": "ERCOT West Texas",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ES",
+        "name": "Spain",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "FI",
+        "name": "Finland",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "FMPP",
+        "name": "Florida Municipal Power Pool",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "FPC",
+        "name": "Duke Energy Florida",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "FPL",
+        "name": "Florida Power & Light",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "FR",
+        "name": "France",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "GCPD",
+        "name": "PUD No 2 of Grant County",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "GR",
+        "name": "Greece",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "GVL",
+        "name": "Gainesville Regional Utilities",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "HQ",
+        "name": "Hydro Quebec",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "HST",
+        "name": "Homestead (City of)",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "HU",
+        "name": "Hungary",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "IE",
+        "name": "Ireland",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "IESO_NORTH",
+        "name": "IESO Ontario North",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "IESO_SOUTH",
+        "name": "IESO Ontario South",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "IESO_WEST",
+        "name": "IESO Ontario West",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "IID",
+        "name": "Imperial Irrigation District",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "IPCO",
+        "name": "Idaho Power Co",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ISONE_CT",
+        "name": "ISONE Connecticut",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ISONE_ME",
+        "name": "ISONE Maine",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ISONE_NEMA",
+        "name": "ISONE Northeast Massachusetts",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ISONE_NH",
+        "name": "ISONE New Hampshire",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ISONE_RI",
+        "name": "ISONE Rhode Island",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ISONE_SEMA",
+        "name": "ISONE Southeast Massachusetts",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ISONE_VT",
+        "name": "ISONE Vermont",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "ISONE_WCMA",
+        "name": "ISONE Western/Central Massachusetts",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "IT",
+        "name": "Italy",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "JEA",
+        "name": "JEA Jacksonville Florida",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "LDWP",
+        "name": "Los Angeles Dept of Water & Power",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "LGEE",
+        "name": "Louisville Gas & Electric Co",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "LT",
+        "name": "Lithuania",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "LV",
+        "name": "Latvia",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "MISO_BEAUMONT",
+        "name": "MISO Beaumont",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "MISO_DETROIT",
+        "name": "MISO Detroit",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "MISO_EAU_CLAIRE",
+        "name": "MISO Eau Claire",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "MISO_GRAND_RAPIDS",
+        "name": "MISO Grand Rapids",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "MISO_INDIANAPOLIS",
+        "name": "MISO Indianapolis",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "MISO_LAFAYETTE",
+        "name": "MISO Lafayette",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "MISO_LOWER_MS_RIVER",
+        "name": "MISO Lower MS River",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "MISO_MADISON",
+        "name": "MISO Madison",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "MISO_MASON_CITY",
+        "name": "MISO Madison City",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "MISO_MINNEAPOLIS",
+        "name": "MISO Minneapolis",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "MISO_NEW_ORLEANS",
+        "name": "MISO New Orleans",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "MISO_N_DAKOTA",
+        "name": "MISO North Dakota",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "MISO_SAINT_LOUIS",
+        "name": "MISO Saint Louis",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "MISO_SPRINGFIELD",
+        "name": "MISO Springfield",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "MISO_UPPER_PENINSULA",
+        "name": "MISO Upper Peninsula",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "MISO_WORTHINGTON",
+        "name": "MISO Worthington",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "MPCO",
+        "name": "Northwestern Energy",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "NEM_NSW",
+        "name": "New South Wales",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "NEM_QLD",
+        "name": "Queensland",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "NEM_SA",
+        "name": "South Australia",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "NEM_TAS",
+        "name": "Tasmania",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "NEM_VIC",
+        "name": "Victoria",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "NEVP",
+        "name": "Nevada Power Co",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "NL",
+        "name": "Netherlands",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "NO",
+        "name": "Norway",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "NYISO_CAPITAL",
+        "name": "NYISO Capital",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "NYISO_CENTRAL",
+        "name": "NYISO Central",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "NYISO_HUDSON",
+        "name": "NYISO Hudson Valley",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "NYISO_LONG",
+        "name": "NYISO Long Island",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "NYISO_MOHAWK",
+        "name": "NYISO Mohawk Valley",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "NYISO_NORTH",
+        "name": "NYISO North",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "NYISO_NYC",
+        "name": "NYISO New York City",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "NYISO_WEST",
+        "name": "NYISO West",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "PACE",
+        "name": "PacifiCorp East",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "PACW",
+        "name": "PacifiCorp West",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "PGE",
+        "name": "Portland General Electric",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "PJM_CHICAGO",
+        "name": "PJM Chicago",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "PJM_DC",
+        "name": "PJM DC",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "PJM_EASTERN_KY",
+        "name": "PJM Eastern Kentucky",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "PJM_EASTERN_OH",
+        "name": "PJM Eastern Ohio",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "PJM_NJ",
+        "name": "PJM New Jersey",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "PJM_ROANOKE",
+        "name": "PJM Roanoke",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "PJM_SOUTHWEST_OH",
+        "name": "PJM Southwest Ohio",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "PJM_WESTERN_KY",
+        "name": "PJM Western Kentucky",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "PL",
+        "name": "Poland",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "PNM",
+        "name": "Public Service Co of New Mexico",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "PSCO",
+        "name": "Public Service Co of Colorado",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "PSEI",
+        "name": "Puget Sound Energy Inc",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "PT",
+        "name": "Portugal",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "RO",
+        "name": "Romania",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "RS",
+        "name": "Serbia",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SC",
+        "name": "South Carolina Public Service Authority",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SCEG",
+        "name": "Dominion Energy South Carolina",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SCL",
+        "name": "Seattle City Light",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SE",
+        "name": "Sweden",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SEC",
+        "name": "Seminole Electric Cooperative",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SI",
+        "name": "Slovenia",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SK",
+        "name": "Slovakia",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SOCO",
+        "name": "Southern Co Services Inc",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SPA",
+        "name": "Southwestern Power Administration",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SPP_FORTPECK",
+        "name": "SPP Fort Peck Reservation",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SPP_KANSAS",
+        "name": "SPP Kansas",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SPP_KC",
+        "name": "SPP Kansas City",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SPP_MEMPHIS",
+        "name": "SPP Memphis",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SPP_ND",
+        "name": "SPP North Dakota",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SPP_OKCTY",
+        "name": "SPP Oklahoma City",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SPP_SIOUX",
+        "name": "SPP Sioux Falls ",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SPP_SPRINGFIELD",
+        "name": "SPP Springfield",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SPP_SWOK",
+        "name": "SPP Southwest Oklahoma",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SPP_TX",
+        "name": "SPP North Texas",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SPP_WESTNE",
+        "name": "SPP Western Nebraska",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "SRP",
+        "name": "Salt River Project",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "TAL",
+        "name": "Tallahassee FL (City of)",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "TEC",
+        "name": "Tampa Electric Co",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "TEPC",
+        "name": "Tucson Electric Power Co",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "TID",
+        "name": "Turlock Irrigation District",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "TPWR",
+        "name": "Tacoma Power",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "TVA",
+        "name": "Tennessee Valley Authority",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "UK",
+        "name": "United Kingdom",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "WACM",
+        "name": "WAPA Rocky Mountain Region",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "WALC",
+        "name": "WAPA Desert Southwest Region",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "WAUW",
+        "name": "WAPA Upper Great Plains West",
+        "access": true,
+        "datatype": "MOER"
+    },
+    {
+        "ba": "WEM",
+        "name": "Western Australia",
+        "access": true,
+        "datatype": "MOER"
+    }
+]

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>Calibrate process input form</h1>
+	<p>message: {{ message }}</p>
+	<p>
+	First we need to get to know your device's battery characteristics. For that you need to charge it once from empty to full. Put the smart plug in the power socket and plug in your charger. Green charge will switch it on and monitor it.
+	</p>
+	<p>
+	Once your device is fully charged you can unplug it.
+	</p>
+	<br/>
+	<form method="POST">
+		<table>
+			<tr>
+				<td><label for="device_name">Device name *</label></td>
+				<td><input id="Device name" name="device_name" type="text"></td>
+			</tr>
+		</table>
+		<input type="submit" value="Start calibration">
+    </form>
+{% endblock %}

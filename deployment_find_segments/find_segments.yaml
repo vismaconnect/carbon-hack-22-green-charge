@@ -1,0 +1,95 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: FindSegments<<STAGE>>
+
+Parameters:
+  Bucket:
+    Type: String
+    Default: charge-device-lambda-function-dev
+    AllowedValues:
+      - charge-device-lambda-function-dev
+      - charge-device-lambda-function-tst
+      - charge-device-lambda-function-acpt
+      - charge-device-lambda-function-prod
+  BucketData:
+    Type: String
+    Default: charge-device-lambda-data-dev
+    AllowedValues:
+      - charge-device-lambda-data-dev
+      - charge-device-lambda-data-tst
+      - charge-device-lambda-data-acpt
+      - charge-device-lambda-data-prod
+  Stage:
+    Type: String
+    Default: Dev
+    AllowedValues:
+      - Dev
+      - Tst
+      - Acpt
+      - Prod
+
+Globals:
+  Function:
+    MemorySize: 512
+    Runtime: python3.9
+    Timeout: 30
+    Environment:
+      Variables:
+        STAGE: !Sub '${Stage}'
+        Bucket: !Sub '${Bucket}'
+        BucketData: !Sub '${BucketData}'
+
+Mappings: 
+  EnvironmentMap: 
+    Dev: 
+      LogGroupRetentionDays: 1
+    Tst: 
+      LogGroupRetentionDays: 7
+    Acpt: 
+      LogGroupRetentionDays: 31
+    Prod:
+      LogGroupRetentionDays: 365
+    
+Resources:
+  FindSegmentsFunction<<STAGE>>:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.lambda_handler
+      CodeUri: function.zip
+      FunctionName: !Sub 'FindSegmentsFunction${Stage}'
+      Role: arn:aws:iam::<<ACCOUNT_ID>>:role/<<ACCOUNT_USER>>
+      ReservedConcurrentExecutions: 1
+      Layers: # An optional list Lambda Layers to use
+        - !Ref FindSegmentsLayer<<STAGE>>
+  FindSegmentsLogGroup<<STAGE>>:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: 
+        Fn::Sub:
+          - '/aws/lambda/${name}'
+          - name: !Sub 'FindSegmentsFunction${Stage}'
+      RetentionInDays: !FindInMap [ 'EnvironmentMap', !Ref 'Stage', 'LogGroupRetentionDays' ]
+  FindSegmentsLayer<<STAGE>>:
+    Type: 'AWS::Serverless::LayerVersion'
+    UpdateReplacePolicy: Retain
+    DeletionPolicy: Retain
+    Properties:
+      CompatibleRuntimes:
+        - python3.9
+      ContentUri: layer.zip
+      Description: requirements-joblib-layer
+      LayerName: FindSegmentsLayer<<STAGE>>
+
+Outputs:
+  FindSegmentsFunction<<STAGE>>ARN:
+    Description: Logical id (ARN) of the lambda
+    Value:
+      !GetAtt FindSegmentsFunction<<STAGE>>.Arn
+    Export:
+      Name: !Sub '${AWS::StackName}-FindSegmentsFunction${Stage}ARN'
+  FindSegmentsLayer<<STAGE>>ARN:
+    Description: Logical id (ARN) of the layer
+    Value:
+      !Ref FindSegmentsLayer<<STAGE>>
+    Export:
+      Name: !Sub '${AWS::StackName}-FindSegmentsLayer<<TIMESTAMP>>ARN'

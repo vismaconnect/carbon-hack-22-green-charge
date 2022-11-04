@@ -1,0 +1,4 @@
+psutil==5.9.2 ; python_version == '3.9' and sys_platform=="linux"
+pandas==1.4.3 ; python_version == '3.9' and sys_platform=="linux"
+ruptures==1.1.7 ; python_version == '3.9' and sys_platform=="linux"
+

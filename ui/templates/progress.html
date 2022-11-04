@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block meta_tags %}
+      <meta http-equiv="refresh" content="300" >
+{% endblock %}
+
+{% block main %}
+      <h1>Charging Progress</h1>
+      <p>message: {{ message }}</p>
+      Device name: {{device_name_tag}}
+      <br/>
+      Current power: {{current_power_tag}} Watt
+      <br/>
+      Current intensity: {{current_intensity_tag}} lbs&nbsp;C02eq
+      <br/>
+      Average intensity of electricity: {{intensity_overall_tag}} lbs&nbsp;C02eq
+      <br/>
+      Average intensity while charging: {{intensity_charging_tag}} lbs&nbsp;C02eq
+      <br/>
+      Percentage saved: {{percentage_saved_tag}} %
+      <br/>
+      Duration: {{duration_tag}} minutes
+      <br/><br/>
+      Last updated: {{last_updated_tag}} (Automatically refreshes after 5 minutes)
+{% endblock %}

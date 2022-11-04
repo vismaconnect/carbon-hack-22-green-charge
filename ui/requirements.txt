@@ -1,0 +1,4 @@
+requests==2.25.1 ; python_version == '3.8' and sys_platform=="linux"
+Flask==2.1.1 ; python_version == '3.8' and sys_platform=="linux"
+Pillow==9.1.1 ; python_version == '3.8' and sys_platform=="linux"
+flask-session==0.4.0 ; python_version == '3.8' and sys_platform=="linux"

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block main %}
+	<h1>Avoided emissions input form</h1>
+    <p>message: {{ message }}</p>
+	<p>
+	Here you can see the emissions you avoided using GreenCharge. You will only see the numbers of your last charging run.
+	</p>
+    <form method="POST">
+        <table>
+            <tr>
+               <td><label for="device_name">Device name *</label></td>
+               <td><input id="device_name" name="device_name" type="text"></td>
+            </tr>
+        </table>
+        <input type="submit" value="View avoided emissions">
+     </form>
+{% endblock %}

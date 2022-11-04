@@ -1,0 +1,86 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: State machine to calibrate a device for charging.
+Resources:
+  CalibrateExecutionRole<<STAGE>>:
+    Type: "AWS::IAM::Role"
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Principal:
+              Service:
+                - !Sub states.${AWS::Region}.amazonaws.com
+            Action: "sts:AssumeRole"
+      Path: "/"
+      Policies:
+        - PolicyName: StatesExecutionPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - "lambda:InvokeFunction"
+                Resource: "*"
+                
+  CalibrateStateMachine<<STAGE>>:
+    Type: AWS::StepFunctions::StateMachine
+    Properties:
+      StateMachineName: CalibrateStateMachine
+      DefinitionString: |-
+        {
+          "Comment": "Calibrate state machine",
+          "StartAt": "Calibrate",
+          "States": {
+            "Calibrate": {
+              "InputPath": "$",
+              "Parameters": {
+                "Payload.$": "$"
+              },
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:eu-north-1:<<ACCOUNT_ID>>:function:ChargeDeviceFunctionDev",
+              "ResultPath": "$",
+              "Retry": [
+                {
+                  "ErrorEquals": [
+                    "Lambda.ServiceException",
+                    "Lambda.AWSLambdaException",
+                    "Lambda.SdkClientException"
+                  ],
+                  "IntervalSeconds": 2,
+                  "MaxAttempts": 6,
+                  "BackoffRate": 2
+                }
+              ],
+              "Next": "Is Finished?"
+            },
+            "Is Finished?": {
+              "Type": "Choice",
+              "Choices": [
+                {
+                  "Variable": "$.charging_data_list[0].finished",
+                  "BooleanEquals": true,
+                  "Next": "Segmentation"
+                }
+              ],
+              "Default": "Wait State"
+            },
+            "Wait State": {
+              "Type": "Wait",
+              "Seconds": 60,
+              "Next": "Calibrate"
+            },
+            "Segmentation": {
+              "InputPath": "$",
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:eu-north-1:<<ACCOUNT_ID>>:function:FindSegmentsFunctionDev",
+              "ResultPath": "$",
+              "Next": "Done"
+            },
+            "Done": {
+              "Type": "Pass",
+              "End": true
+            }
+          }
+        }
+      RoleArn: !GetAtt [ CalibrateExecutionRole<<STAGE>>, Arn ]

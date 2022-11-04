@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block main %}
+      <h1>Charging process started</h1>
+      <p>message: {{ message }}</p>
+      <table>
+         <tr>
+            <td>Device name: </td><td>{{device_name_tag}}</td>
+         </tr>
+         <tr>
+            <td>Status: </td><td>{{status_tag}}</td>
+         </tr>
+         <tr>
+            <td>Time window: </td><td>{{time_window_tag}}&nbsp;hours</td>
+         </tr>
+         <tr>
+            <td>Start Date: </td><td>{{startDate_tag}}</td>
+         </tr>
+      </table>
+      <button type="button" onclick="window.location.href='{{ url_for('progress', mac=mac_tag, device_name=device_name_tag ) }}';">Show progress</button>
+{% endblock %}

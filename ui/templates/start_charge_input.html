@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block main %}
+      <h1>Charging process input form</h1>
+      <p>message: {{ message }}</p>
+	  <p>
+	  Now the device is registered and calibrated you can start using GreenCharge for regular charging. Plug your device in the smart plug and let GreenCharge decide when to start and stop charging.
+	  </p>
+      <form method="POST">
+        <table>
+            <tr>
+                <td><label for="device_name">Device name&nbsp;*&nbsp;</label></td>
+                <td><input id="Device name" name="device_name" type="text"></td>
+            </tr>
+            <tr>
+                <td><label for="finish_by">Time window&nbsp;*&nbsp;</label>
+                    <div class="tooltip"><img src="/static/info-16.ico" alt="Info logo">
+                        <span class="tooltiptext">How many hours do we have to charge the device? 0 is interpreted as charge regardless of intensity.</span>
+                    </div>
+                </td>
+                <td>
+                    <select name="time_window" class="Input">
+                        {% for t in time_window_list_tag %}
+                        <option value="{{ t }}">{{ t }}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="Charge">
+      </form>
+{% endblock %}

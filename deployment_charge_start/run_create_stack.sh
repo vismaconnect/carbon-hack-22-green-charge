@@ -1,0 +1,1 @@
+./create_stack.sh -i '<AWS_ACCOUNT_ID' -r '<AWS_ACCOUNT_REGION' -u '<AWS_ACCOUNT_USER>'

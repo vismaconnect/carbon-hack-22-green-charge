@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block main %}
+      <h1>Avoided emissions for the last known charging run</h1>
+      <p>message: {{ message }}</p>
+      <table>
+         <tr>
+            <td>Device name:&nbsp;</td>
+            <td>{{device_name_tag}}</td>
+         </tr>
+         <tr>
+            <td>Total emissions normal charging:&nbsp;</td>
+            <td>{{total_emissions_actual_tag}} lbs&nbsp;C02eq</td>
+         </tr>
+         <tr>
+            <td>Total emissions using GreenCharge:&nbsp;</td>
+            <td>{{total_emissions_alt_tag}} lbs&nbsp;C02eq</td>
+         </tr>
+         <tr>
+            <td>Percentage avoided emissions:&nbsp;</td>
+            <td>{{percentage_saved_tag}}&nbsp;%</td>
+         </tr>
+      </table>
+      <br/><br/>
+{% endblock %}

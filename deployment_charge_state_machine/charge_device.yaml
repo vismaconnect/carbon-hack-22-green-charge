@@ -1,0 +1,77 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: State machine to charge a device using as little carbon as possible.
+Resources:
+  ChargeDeviceExecutionRole<<STAGE>>:
+    Type: "AWS::IAM::Role"
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: "Allow"
+            Principal:
+              Service:
+                - !Sub states.${AWS::Region}.amazonaws.com
+            Action: "sts:AssumeRole"
+      Path: "/"
+      Policies:
+        - PolicyName: StatesExecutionPolicy
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action:
+                  - "lambda:InvokeFunction"
+                Resource: "*"
+  ChargeDeviceStateMachine<<STAGE>>:
+    Type: AWS::StepFunctions::StateMachine
+    Properties:
+      StateMachineName: ChargeDeviceStateMachine
+      DefinitionString: |-
+        {
+          "Comment": "Charge the device as green as possible",
+          "StartAt": "Charge Device",
+          "States": {
+            "Charge Device": {
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:eu-north-1:533211398604:function:ChargeDeviceFunctionDev",
+              "OutputPath": "$",
+              "Parameters": {
+                "Payload.$": "$"
+              },
+              "Retry": [
+                {
+                  "ErrorEquals": [
+                    "Lambda.ServiceException",
+                    "Lambda.AWSLambdaException",
+                    "Lambda.SdkClientException"
+                  ],
+                  "IntervalSeconds": 2,
+                  "MaxAttempts": 6,
+                  "BackoffRate": 2
+                }
+              ],
+              "Next": "Is Fully Charged?"
+            },
+            "Is Fully Charged?": {
+              "Type": "Choice",
+              "Choices": [
+                {
+                  "Variable": "$.charging_data_list[0].finished",
+                  "BooleanEquals": true,
+                  "Next": "Done"
+                }
+              ],
+              "Default": "Wait State"
+            },
+            "Wait State": {
+              "Type": "Wait",
+              "Seconds": 300,
+              "Next": "Charge Device"
+            },
+            "Done": {
+              "Type": "Pass",
+              "End": true
+            }
+          }
+        }
+      RoleArn: !GetAtt [ ChargeDeviceExecutionRole<<STAGE>>, Arn ]

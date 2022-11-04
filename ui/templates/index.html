@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block main %}
+      <h1>Welcome to GreenCharge</h1>
+      <p>message: {{ message }}</p>
+      <p>The GreenCharge app that makes charging your battery powered devices greener.</p>
+      <p>
+      GreenCharge uses a smart plug to help charging in a green way. This implementation uses the Shelly Plug S.
+      First you need to register the device you want to charge and provide details about the smart plug.
+      After registering a one time calibration charge run needs to be done, so the system knows the device battery's characteristics.
+      From then on you can charge your device with GreenCharge.
+      Lastly you can see the avoided emissions by using GreenCharge
+      </p>
+      <br/><br/>
+      <button type="button" onclick="window.location.href='{{ url_for('start_register_device_input' ) }}';">Register device</button>
+      <button type="button" onclick="window.location.href='{{ url_for('start_calibration_input' ) }}';">Calibrate</button>
+      <button type="button" onclick="window.location.href='{{ url_for('start_charge_input' ) }}';">Charge</button>
+      <button type="button" onclick="window.location.href='{{ url_for('avoided_emissions_input' ) }}';">View avoided emissions</button>
+{% endblock %}

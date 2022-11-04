@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block meta_tags %}
+      <meta http-equiv="refresh" content="60" >
+{% endblock %}
+
+{% block main %}
+    <h1>Calibration Progress</h1>
+    <p>message: {{ message }}</p>
+	<p>
+	Once your device is fully charged you can unplug it.
+	</p>
+    Device name: {{device_name_tag}}
+    <br/>
+    Current power: {{current_power_tag}} Watt
+    <br/>
+    Duration: {{duration_tag}} minutes
+    <br/><br/>
+    Last updated: {{last_updated_tag}} (Automatically refreshes after 1 minute)
+{% endblock %}

@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% block main %}
+      <h1>Device registration input form</h1>
+      <p>message: {{ message }}</p>
+	  <p>
+	  Your device needs to be registered before we can charge it for you. We also need to know the details about the smart plug.
+	  </p>
+      <form method="POST">
+        <table>
+            <tr>
+                <td>
+                    <label for="device_name">Device name&nbsp;*</label>
+                    <div class="tooltip"><img src="/static/info-16.ico" alt="Info logo">
+                        <span class="tooltiptext">
+                            This is the unique name of the device you want to charge. So for example: "eric_phone". You can use underscores, but don't use spaces.
+                        </span>
+                    </div>
+                </td>
+                <td><input id="device_name" name="device_name" type="text"></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for"region_selection">Region type selection *</label>
+                    <div class="tooltip"><img src="/static/info-16.ico" alt="Info logo">
+                        <span class="tooltiptext">
+                            You can either choose from Azure regions or other regions
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <input type="radio" id="azure_regions" name="region_type_selection" value="azure_regions" onclick="show_azure();" checked >
+                        <label for="region_type_selection">Azure regions</label>
+                    <input type="radio" id="other_regions" name="region_type_selection" value="other_regions" onclick="show_other();">
+                        <label for="region_type_selection">Other regions</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="box_azure_label">
+                        <label for"azure_region">Azure region&nbsp;*</label>
+                        <div class="tooltip"><img src="/static/info-16.ico" alt="Info logo">
+                            <span class="tooltiptext">
+                                In which Azure region is the electricity produced?
+                            </span>
+                        </div>
+                    </div>
+                    <div id="box_other_label" class="hide">
+                        <label for"region">Region&nbsp;*</label>
+                        <div class="tooltip"><img src="/static/info-16.ico" alt="Info logo">
+                            <span class="tooltiptext">
+                                In which region is the electricity produced?
+                            </span>
+                        </div>    
+                    </div>
+                </td>
+                <td>
+                    <div id="box_azure_input">
+                        <select name="region_azure_select" class="Input">
+                            {% for r in azure_regions_tag %}
+                            <option value="{{ r.name }}">{{ r.displayName }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div id="box_other_input" class="hide">
+                        <select name="region_ba_select" class="Input">
+                            {% for r in regions_tag %}
+                            <option value="{{ r.ba }}">{{ r.name }}</option>
+                            {% endfor %}
+                        </select>    
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="smart_plug_id">Smart plug id&nbsp;*</label>
+                    <div class="tooltip"><img src="/static/info-16.ico" alt="Info logo">
+                        <span class="tooltiptext">
+                            The Smart plug id is the device id of the Shelly smart plug
+                        </span>
+                    </div>
+                    <div class="tooltip"><img src="/static/screenshot-16.ico" alt="Info logo">
+                        <span class="tooltiptext">
+                            The Smart plug id can be found here:
+                            <img src="/static/screenshots/deviceId.png" alt="device_id" width="400px">
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <input id="smart_plug_id" name="smart_plug_id" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="smart_plug_auth_key">Smart plug auth key&nbsp; *</label>
+                    <div class="tooltip"><img src="/static/info-16.ico" alt="Info logo">
+                        <span class="tooltiptext">
+                            The Smart plug auth key is the authorization key id of the Shelly smart plug which enables access via the internet.
+                        </span>
+                    </div>
+                    <div class="tooltip"><img src="/static/screenshot-16.ico" alt="Info logo">
+                        <span class="tooltiptext">
+                            The Smart plug auth key can be found here:
+                            <img src="/static/screenshots/auth_key_and_Url.png" alt="auth_key" width="400px">
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <input id="smart_plug_auth_key" name="smart_plug_auth_key" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="smart_plug_url">Smart plug URL&nbsp; *</label>
+                    <div class="tooltip"><img src="/static/info-16.ico" alt="Info logo">
+                        <span class="tooltiptext">
+                            The Smart plug URL is the URL with which this Shelly smart plug can be reached.
+                        </span>
+                    </div>
+                    <div class="tooltip"><img src="/static/screenshot-16.ico" alt="Info logo">
+                        <span class="tooltiptext">
+                            The Smart plug URL can be found here:
+                            <img src="/static/screenshots/auth_key_and_Url.png" alt="auth_key" width="400px">
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <input id="smart_plug_url" name="smart_plug_url" type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="charge_mode">Charge mode&nbsp;*</label>
+                    <div class="tooltip"><img src="/static/info-16.ico" alt="Info logo">
+                        <span class="tooltiptext">
+                            <ul>
+                                <li>Charge is the modus where you cannot charge and operate at the same time, like an e-bike.</li>
+                                <li>Operate is the modus where you can charge and operate at the same time, like a laptop.</li>
+                            </ul>
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <select name="charge_mode" class="Input">
+                        <option value="charge">Charge</option>
+                        <option value="charge">Operate</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="Register">
+      </form>
+{% endblock %}
+
+{% block script %}
+function show_azure(){
+    document.getElementById('box_azure_label').style.display ='block';
+    document.getElementById('box_azure_input').style.display ='block';
+    document.getElementById('box_other_label').style.display ='none';
+    document.getElementById('box_other_input').style.display ='none';
+}
+
+function show_other(){
+    document.getElementById('box_azure_label').style.display ='none';
+    document.getElementById('box_azure_input').style.display ='none';
+    document.getElementById('box_other_label').style.display ='block';
+    document.getElementById('box_other_input').style.display ='block';
+}
+{% endblock %}

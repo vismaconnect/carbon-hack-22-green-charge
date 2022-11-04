@@ -1,0 +1,97 @@
+<html lang="en" class="">
+   <head>
+      <meta charset="utf-8">
+      {% block meta_tags %}
+      {% endblock %}
+      <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'>
+      <style>
+         * {
+            font-family: Ubuntu, sans-serif;
+         }
+
+         body {
+            background-color:rgba(43,48,51,1);
+            color: #ffffff;
+         }
+
+         button,
+         input[type=button],
+         input[type=submit] {
+            background-color: #98D369;
+            border: 1px;
+            color: #000;
+            padding: 15px 30px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+         }
+
+         .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+         }
+
+         .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 500px;
+            background-color: #98D369;
+            color: black;
+            text-align: left;
+            border-radius: 6px;
+            padding: 15px 30px;
+
+         /* Position the tooltip */
+         position: absolute;
+         z-index: 1;
+         }
+
+         .tooltip:hover .tooltiptext {
+         visibility: visible;
+         }
+
+         .hide {
+            display: none;
+         }
+
+         input[type='radio']:after {
+            width: 13px;
+            height: 13px;
+            border-radius: 13px;
+            top: -2px;
+            left: -1px;
+            position: relative;
+            background-color: #d1d3d1;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 2px solid white;
+         }
+
+         input[type='radio']:checked:after {
+            width: 13px;
+            height: 13px;
+            border-radius: 13px;
+            top: -2px;
+            left: -1px;
+            position: relative;
+            background-color: #98D369;
+            content: '';
+            display: inline-block;
+            visibility: visible;
+            border: 2px solid white;
+         }
+         </style>
+      <title>{{ title_tag }}</title>
+   </head>
+   <body>
+      <a href="/"><img src="/static/Greencharge logo large.png" alt="Visma logo" width="125" style=""></a>
+	   <br/>
+      {% block main %}
+      {% endblock %}
+      <script>
+      {% block script %}
+      {% endblock %}         
+      </script>
+   </body>
+</html>
