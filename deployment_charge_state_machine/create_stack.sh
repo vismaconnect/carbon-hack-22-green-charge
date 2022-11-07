@@ -1,26 +1,5 @@
 #!/bin/sh
 
-while getopts ":i:u:" opt; do
-  case $opt in
-    i) ACCOUNT_ID="$OPTARG"
-    ;;
-    u) ACCOUNT_USER="$OPTARG"
-    ;;
-    \?) echo "Invalid option -$OPTARG" >&2
-    exit 1
-    ;;
-  esac
-
-  case $OPTARG in
-    -*) echo "Option $opt needs a valid argument"
-    exit 1
-    ;;
-  esac
-done
-
-printf "Argument ACCOUNT_ID is %s\n" "$ACCOUNT_ID"
-printf "Argument ACCOUNT_USER is %s\n" "$ACCOUNT_USER"
-
 TMP_DIR=tmp
 Template_DIR=tmp
 STAGE=Dev
@@ -45,11 +24,7 @@ datetime=$year$month$day$hour$minutes
 
 cp $YAML_FILE $Template_DIR
 
-sed -i "s/<<TIMESTAMP>>/$datetime/g" $Template_DIR/$YAML_FILE
 sed -i "s/<<STAGE>>/$STAGE/g" $Template_DIR/$YAML_FILE
-# sed -i "s/<<STAGE_BUCKET>>/$STAGE_BUCKET/g" $Template_DIR/$YAML_FILE
-sed -i "s/<<ACCOUNT_ID>>/$ACCOUNT_ID/g" $Template_DIR/$YAML_FILE
-sed -i "s/<<ACCOUNT_USER>>/$ACCOUNT_USER/g" $Template_DIR/$YAML_FILE
 
 # deploy
 sam validate --template-file $Template_DIR/$YAML_FILE

@@ -25,7 +25,7 @@ Resources:
   ChargeDeviceStateMachine<<STAGE>>:
     Type: AWS::StepFunctions::StateMachine
     Properties:
-      StateMachineName: ChargeDeviceStateMachine
+      StateMachineName: ChargeDeviceStateMachine<<STAGE>>
       DefinitionString: |-
         {
           "Comment": "Charge the device as green as possible",
@@ -33,7 +33,7 @@ Resources:
           "States": {
             "Charge Device": {
               "Type": "Task",
-              "Resource": "arn:aws:lambda:eu-north-1:533211398604:function:ChargeDeviceFunctionDev",
+              "Resource": "arn:aws:${AWS::Region}:${AWS::AccountId}:function:ChargeDeviceFunction<<STAGE>>",
               "OutputPath": "$",
               "Parameters": {
                 "Payload.$": "$"

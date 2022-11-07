@@ -26,7 +26,7 @@ Resources:
   CalibrateStateMachine<<STAGE>>:
     Type: AWS::StepFunctions::StateMachine
     Properties:
-      StateMachineName: CalibrateStateMachine
+      StateMachineName: CalibrateStateMachine<<STAGE>>
       DefinitionString: |-
         {
           "Comment": "Calibrate state machine",
@@ -38,7 +38,7 @@ Resources:
                 "Payload.$": "$"
               },
               "Type": "Task",
-              "Resource": "arn:aws:lambda:eu-north-1:<<ACCOUNT_ID>>:function:ChargeDeviceFunctionDev",
+              "Resource": "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:ChargeDeviceFunction<<STAGE>>",
               "ResultPath": "$",
               "Retry": [
                 {
@@ -73,7 +73,7 @@ Resources:
             "Segmentation": {
               "InputPath": "$",
               "Type": "Task",
-              "Resource": "arn:aws:lambda:eu-north-1:<<ACCOUNT_ID>>:function:FindSegmentsFunctionDev",
+              "Resource": "arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:FindSegmentsFunction<<STAGE>>",
               "ResultPath": "$",
               "Next": "Done"
             },
